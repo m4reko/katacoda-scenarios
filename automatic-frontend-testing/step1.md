@@ -1,6 +1,6 @@
 We need a driver 
 ## Install WebDriver
-`apt install firefox-geckodriver`{{execute}}
+`apt update && apt install firefox-geckodriver`{{execute}}
 
 We will use Python to run Selenium.
 ## Install selenium 
