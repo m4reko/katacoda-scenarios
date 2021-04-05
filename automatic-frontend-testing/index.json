@@ -41,7 +41,7 @@
     "hideintro": true,
     "hidefinish": true,
     "uilayout": "editor-terminal-v1",
-    "uisettings": "bash",
+    "uisettings": "bash"
 },
   "backend": {
     "imageid": "ubuntu"
