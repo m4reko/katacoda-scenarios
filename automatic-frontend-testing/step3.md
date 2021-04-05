@@ -1,10 +1,10 @@
 ## Python code
 Import the Firefox driver
 ```python
-    from selenium.webdriver import Firefox
-    from selenium import webdriver
-    import time
-    driver = Firefox()
+from selenium.webdriver import Firefox
+from selenium import webdriver
+import time
+driver = Firefox()
 ```
 
 Run the driver
