@@ -3,7 +3,7 @@ We need a driver
 ## Download WebDriver
 Get the driver
 
-`wget https://chromedriver.storage.googleapis.com/77.0.3865.40/chromedriver_linux64.zip`{{execute}}
+`wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip`{{execute}}
 
 Unzup the file
 
