@@ -2,11 +2,18 @@
 ```python
 import unittest
 from selenium import webdriver
+import time
+import re
+chrome_path = '/root/chromedriver'
 
-class GoogleTestCase(unittest.TestCase):
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_argument("--headless") # Runs Chrome in headless mode.
+options.add_argument('--no-sandbox') # # Bypass OS security model
+class TestCase(unittest.TestCase):
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        self.browser = webdriver.Chrome(chrome_options=options, executable_path=chrome_path)
         self.addCleanup(self.browser.quit)
 
     def testPageTitle(self):
@@ -16,3 +23,4 @@ class GoogleTestCase(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main(verbosity=2)
 ```
+
