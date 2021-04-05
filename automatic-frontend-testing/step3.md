@@ -9,12 +9,8 @@ Import the Firefox driver
 
 Run the driver
 ```python
-    options = webdriver.ChromeOptions()
-    options.add_argument('--ignore-certificate-errors')
-    options.add_argument("--test-type")
-    options.binary_location = "/usr/bin/chromium"
-    driver = webdriver.Chrome(chrome_options=options)
-    driver.get('https://python.org')
+driver = webdriver.Chrome('/root/chromedriver')
+driver.get('https://python.org')
 ```
 
 Execute the file
