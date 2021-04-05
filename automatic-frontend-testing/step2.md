@@ -1,22 +1,17 @@
-## Python code
-Import the Firefox driver
-```python
-    from selenium.webdriver import Firefox
-    from selenium import webdriver
-    import time
-    driver = Firefox()
-```
+We need a driver 
 
-Run the driver
-```python
-    options = webdriver.ChromeOptions()
-    options.add_argument('--ignore-certificate-errors')
-    options.add_argument("--test-type")
-    options.binary_location = "/usr/bin/chromium"
-    driver = webdriver.Chrome(chrome_options=options)
-    driver.get('https://python.org')
-```
+## Download WebDriver
+`wget https://chromedriver.storage.googleapis.com/77.0.3865.40/chromedriver_linux64.zip`{{execute}}
+`unzip chromedriver_linux64.zip`{{execute}}
 
-Execute the file
-`python3 example.py`{{execute}}
+## Install Google Chrome
+`wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`{{execute}}
 
+`dpkg -i google-chrome-stable_current_amd64.deb`{{execute}}
+
+`apt update && apt-get -f -y install`{{execute}}
+
+## Install WebDriver
+We will use Python to run Selenium.
+## Install selenium 
+`pip install selenium`{{execute}}
