@@ -7,8 +7,8 @@ chrome_path = '/root/chromedriver'
 
 from selenium.webdriver.chrome.options import Options
 options = Options()
-options.add_argument("--headless") # Runs Chrome in headless mode.
-options.add_argument('--no-sandbox') # # Bypass OS security model
+options.add_argument("--headless")      # Runs Chrome in headless mode.
+options.add_argument('--no-sandbox')    # Bypass OS security model
 ```
 
 Next, we need to add our test class. 
@@ -31,14 +31,14 @@ The `setUp()`-method creates our `self.browser` object which will keep the web d
     # First test
     def testPageTitle(self):
         # Fetches the website
-        self.browser.get('http://www.google.com')
+        self.browser.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')
         # Asserts that the string Google is in the title
-        self.assertIn('Google', self.browser.title)
+        self.assertIn('Keys and Click Event Display', self.browser.title)
 ```
 
 We can run this program by typing
 
 `python3 website-test.py`{{execute}}
 
-If everything runs correctly, you should have 1 test passing. Try renaming the `Google` string and see if the test passes!
+If everything runs correctly, you should have 1 test passing. Try renaming the `Keys and Click Event Display` string and see if the test passes!
 

@@ -14,15 +14,18 @@ and run the file again with `python3 selenium-test.py`{{execute}}.
 
 ## Getting the page source
 
-Again in the same file, add the line 
+We touched upon this a bit in the step before, but now we're doing it again. You can view the entire inner HTML by calling `driver.page_source`. Again in the same file, add the line 
 
 ```python
 print(driver.page_source)
 ```
 
-and run the file again with `python3 selenium-test.py`{{execute}}. In this case, we get 
+and run the file again with `python3 selenium-test.py`{{execute}}. In this case, we get (fortsätt här)
 
 ## Finding elements by id
 Open your browser on your own computer and go to the page `https://testpages.herokuapp.com/styled/key-click-display-test.html` yourself. Inspect the website, and look at the HTML tree of the website.
 
+(fortsätt här)
+
 ## Finding elements by `xpath`
+(fortsätt här)
