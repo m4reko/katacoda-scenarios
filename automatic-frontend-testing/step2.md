@@ -1,14 +1,5 @@
-We need a driver 
-
-## Download WebDriver
-Get the driver
-
-`wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip`{{execute}}
-
-Unzup the file
-
-`unzip chromedriver_linux64.zip`{{execute}}
-
+# Browser
+We are mounting this tutorial in a clean Ubuntu installation. We therefore need to get our browser of choice to do the testing in.
 ## Install Google Chrome
 Get Google Chrome
 
@@ -22,7 +13,20 @@ Install file
 
 `apt update && apt-get -f -y install`{{execute}}
 
-## Install selenium 
-Install file with `pip`
+# Web driver
+A web driver allows you to use your browser with code. This tool lets us create the automatic testing in Chrome.
+## Download WebDriver
+Get the driver
+
+`wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip`{{execute}}
+
+Unzup the file
+
+`unzip chromedriver_linux64.zip`{{execute}}
+
+# Selenium
+Lastly, we need the framework for controlling the web driver. We will use `python` as our language, which has an implementation of Selenium. 
+## Install Selenium 
+Install Selenium with `pip`
 
 `pip install selenium`{{execute}}

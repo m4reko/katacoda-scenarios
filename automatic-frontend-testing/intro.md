@@ -1,0 +1,1 @@
+Welcome to our tutorial! We will go through the basics of using Selenium with `python` and use it for automatic website testing.
