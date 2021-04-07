@@ -15,7 +15,7 @@ Install file
 
 # Web driver
 A web driver allows you to use your browser with code. This tool lets us create the automatic testing in Chrome.
-## Download WebDriver
+## Download Web driver
 Get the driver
 
 `wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip`{{execute}}
