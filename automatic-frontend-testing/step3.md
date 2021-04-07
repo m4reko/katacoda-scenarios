@@ -1,7 +1,7 @@
 # Testing out Selenium
 We are now finally done with the installations, yay! Now we can begin trying our Selenium.
 
-We first need to create our file. Run `touch website-test.py`{{execute}} and then click on the file `website-test.py` in the editor above.
+We first need to create our file. Run `touch selenium-test.py`{{execute}} and then click on the file `selenium-test.py` in the editor above.
 ## Python code
 We first need to import our dependencies. Type this into the file.
 ```python
@@ -21,10 +21,10 @@ driver = webdriver.Chrome(options=options, executable_path=chrome_path) # Run dr
 
 Now we're all set! We can try fetching a website by typing
 ```python
-driver.get('https://python.org')
+driver.get('http://www.google.com')
 ```
 
 Now we're done with he file! Execute it by typing
-`python3 website-test.py`{{execute}}
+`python3 selenium-test.py`{{execute}}
 
 If you've done everything correctly, the result of this comment shouldn't output anything.
