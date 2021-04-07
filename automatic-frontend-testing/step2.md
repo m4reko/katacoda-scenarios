@@ -15,18 +15,20 @@ Install file
 
 # Web driver
 A web driver allows you to use your browser with code. This tool lets us create the automatic testing in Chrome.
+
 ## Download WebDriver
 Get the driver
 
 `wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip`{{execute}}
 
-Unzup the file
+Unzip the file
 
 `unzip chromedriver_linux64.zip`{{execute}}
 
 # Selenium
-Lastly, we need the framework for controlling the web driver. We will use `python` as our language, which has an implementation of Selenium. 
-## Install Selenium 
+Lastly, we need the framework for controlling the web driver. We will use `python` as our language, which has an implementation of Selenium.
+
+## Install Selenium
 Install Selenium with `pip`
 
 `pip install selenium`{{execute}}
