@@ -20,4 +20,15 @@ The button has `id="button"` as an attribute. Selenium can find HTML-tags based 
 
 ```python 
 element = self.browser.find_element_by_id("button")
+element.click()
 ```
+
+which will find the button and click on it.
+
+We now have a `<p>click</p>`-tag somewhere in the HTML.
+
+```python
+self.assertIn('<p>click</p>', self.browser.page_source)
+```
+
+
