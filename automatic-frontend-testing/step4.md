@@ -2,12 +2,13 @@
 We're now ready to see what we can do with Selenium. The website `https://testpages.herokuapp.com` has great pages for automatic testing. In this step, we will use the page `https://testpages.herokuapp.com/styled/key-click-display-test.html`. 
 
 In the same file as the previous step, `selenium-test.py`, replace the line `driver.get('http://www.google.com')` with `driver.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')`
-## Getting the page title
+## Getting the page title and URL
 
 Add the following line:
 
 ```python
 print(driver.title)
+print(driver.url)
 ```
 
 and run the file again with `python3 selenium-test.py`{{execute}}. 
@@ -21,11 +22,3 @@ print(driver.page_source)
 ```
 
 and run the file again with `python3 selenium-test.py`{{execute}}. In this case, we get (fortsätt här)
-
-## Finding elements by id
-Open your browser on your own computer and go to the page `https://testpages.herokuapp.com/styled/key-click-display-test.html` yourself. Inspect the website, and look at the HTML tree of the website.
-
-(fortsätt här)
-
-## Finding elements by `xpath`
-(fortsätt här)
