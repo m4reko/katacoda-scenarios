@@ -6,32 +6,28 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Installation",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Testing out Selenium",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "More Selenium functions",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Finding elements",
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Unit tests",
         "text": "step5.md"
       },
       {
-        "title": "Step 6",
+        "title": "Interactive tests",
         "text": "step6.md"
-      },
-      {
-        "title": "Step 7",
-        "text": "step7.md"
       }
     ],
     "intro": {

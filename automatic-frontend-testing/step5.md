@@ -1,36 +1,44 @@
-## Finding elements by id
-Open your browser on your own computer and go to the page `https://testpages.herokuapp.com/styled/key-click-display-test.html` yourself. Inspect the website by right clicking on it, and look at the HTML of the website.
-
-You'll see that it looks something like this: 
-
-```html
-<div id="events">
-    <input id="button" type="button" value="click me" class="styled-click-button">
-</div>
-```
-
-Notice that the button has an id, `id="button"`. We can use this with Selenium to target components on the page, given that they have a unique id. In this case, we would like to click the button. In the `selenium-test.py` file, type
+We're now ready to do some unit tests with Selenium. We use the same imports as before, but now we've also added the package `unittest`. Create the file `website-test.py` with `touch website-test.py`{{execute}}. Open the file `website-test.py` and add all dependencies like we did in the step before in `selenium-test.py`. Make sure to add the line `import unittest` this time, as we've done below.
 
 ```python
-element = driver.find_element_by_name("button")
-element.click()
+import unittest
+from selenium import webdriver
+chrome_path = '/root/chromedriver'
+
+from selenium.webdriver.chrome.options import Options
+options = Options()
+options.add_argument("--headless")      # Runs Chrome in headless mode.
+options.add_argument('--no-sandbox')    # Bypass OS security model
 ```
-And done! We've clicked on the button. Try typing out the `page_source` of the `driver` now.
 
-## Finding elements by `xpath`
-Xpath is another way of finding your way around a HTML-document. The xpath relies on the tree structure of the document, compared to the id which relies on the component having a unique name.
+Next, we need to add our test class. 
+```python
+class TestCase(unittest.TestCase):
 
-Again, go to the same test page as before. If you click the button, you'll notice you get a `<p>`-tag that says _click_. Try finding this `<p>`-tag in the HTML-tree in the inspector.
+    def setUp(self):
+        # Set up the driver
+        self.browser = webdriver.Chrome(options=options, executable_path=chrome_path)
+        # Clean up function to be called after each test
+        self.addCleanup(self.browser.quit)
 
-Now, right click on the `<p>`-tag, and click `Copy XPath` (the text here depends on the browser). You can get relative paths or absolute paths. Hopefully you get one of the paths below
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
+```
 
-* `/html/body/div/div[3]/div/p`
-* `//*[@id="events"]/p`
+The `setUp()`-method creates our `self.browser` object which will keep the web driver. We also have our `addCleanup()`-method, which quits the browser when we're finished. We now need to add our test. Below the `setUp()` function on the same indentation level, we add our first test:
 
-We wont get into the details of xpaths here, but try to understand why these strings are valid xpaths.
+```python
+    # First test
+    def testPageTitle(self):
+        # Fetches the website
+        self.browser.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')
+        # Asserts that the string Google is in the title
+        self.assertIn('Keys and Click Event Display', self.browser.title)
+```
 
-In the next step, we will use this to create our first test.
+We can run this program by typing
 
+`python3 website-test.py`{{execute}}
 
-
+If everything runs correctly, you should have 1 test passing. Try renaming the `Keys and Click Event Display` string and see if the test passes!
 

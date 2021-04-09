@@ -1,34 +1,42 @@
-# Browser
-We are mounting this tutorial in a clean Ubuntu installation. We therefore need to get our browser of choice to do the testing in.
+We are now finally done with the installations, yay! Now we can begin trying out Selenium.
 
-## Install Google Chrome
-First download Google Chrome.
+We first need to create our file. Run `touch selenium-test.py`{{execute}} and then click on the file `selenium-test.py` in the editor above.
 
-`wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`{{execute}}
+## Python code
+The first step is to import our dependencies. Type this into the file:
 
-Then use `dpkg` to install it. Don't worry about any errors that might show up. They will be fixed with the next command.
+<pre class="file" data-filename="selenium-test.py">
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+</pre>
 
-`dpkg -i google-chrome-stable_current_amd64.deb`{{execute}}
+We also need to define some options for the web driver. For example, we can't see the browser when it's testing, which is why we're running it in `headless` mode. Add the following lines below:
 
-Use this command to fix any dependency errors created by the last command.
+<pre class="file" data-filename="selenium-test.py">
+options = Options()
+# Runs Chrome in headless mode
+options.add_argument('--headless')
+# Bypass OS security model; this is needed since we run it in headless mode
+options.add_argument('--no-sandbox')
+# Define the path to the driver we downloaded
+chrome_path = '/root/chromedriver'
+# Run the driver with options and the path to the web driver
+driver = webdriver.Chrome(options=options, executable_path=chrome_path)
+</pre>
 
-`apt update && apt-get -f -y install`{{execute}}
+Now we're all set! We can try fetching a website by adding the following to the end of the file:
 
-# Web driver
-A web driver allows you to control your browser with code. This tool lets us create the automatic testing in Chrome.
+<pre class="file" data-filename="selenium-test.py">
+driver.get('https://www.google.com')
+</pre>
 
-Download the driver.
+Just to verify for ourselves that the driver managed to fetch the website we can print the page source by adding the following:
 
-`wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip`{{execute}}
+<pre class="file" data-filename="selenium-test.py">
+print(driver.page_source)
+</pre>
 
-Unzip the file.
+Now we're done with he file! Execute it by typing
+`python3 selenium-test.py`{{execute}}
 
-`unzip chromedriver_linux64.zip`{{execute}}
-
-# Selenium
-Lastly, we need the framework for controlling the web driver. We will use `python` as our language, which has an implementation of Selenium.
-
-## Install Selenium
-Install Selenium with `pip`.
-
-`pip install selenium`{{execute}}
+If you've done everything correctly, this command should print the source of the website we fetched.

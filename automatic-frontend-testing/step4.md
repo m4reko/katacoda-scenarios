@@ -1,24 +1,33 @@
-# Using some features in Selenium
-We're now ready to see what we can do with Selenium. The website `https://testpages.herokuapp.com` has great pages for automatic testing. In this step, we will use the page `https://testpages.herokuapp.com/styled/key-click-display-test.html`. 
+## Finding elements by id
+Open your browser on your own computer and go to the page `https://testpages.herokuapp.com/styled/key-click-display-test.html` yourself. Inspect the website by right clicking on it, and look at the HTML of the website.
 
-In the same file as the previous step, `selenium-test.py`, replace the line `driver.get('http://www.google.com')` with `driver.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')`
-## Getting the page title and URL
+You'll see that it looks something like this:
 
-Add the following line:
-
-```python
-print(driver.title)
-print(driver.url)
+```html
+<div id="events">
+    <input id="button" type="button" value="click me" class="styled-click-button">
+</div>
 ```
 
-and run the file again with `python3 selenium-test.py`{{execute}}. 
-
-## Getting the page source
-
-We touched upon this a bit in the step before, but now we're doing it again. You can view the entire inner HTML by calling `driver.page_source`. Again in the same file, add the line 
+Notice that the button has an id, `id="button"`. We can use this with Selenium to target components on the page, given that they have a unique id. In this case, we would like to click the button. In the `selenium-test.py` file, type
 
 ```python
-print(driver.page_source)
+element = driver.find_element_by_id("button")
+element.click()
 ```
+And done! We've clicked on the button. Try typing out the `page_source` of the `driver` now.
 
-and run the file again with `python3 selenium-test.py`{{execute}}. In this case, we get (fortsätt här)
+## Finding elements by `xpath`
+Xpath is another way of finding your way around a HTML-document. The xpath relies on the tree structure of the document, compared to the id which relies on the component having a unique name.
+
+Again, go to the same test page as before. If you click the button, you'll notice you get a `<p>`-tag that says _click_. Try finding this `<p>`-tag in the HTML-tree in the inspector.
+
+Now, right click on the `<p>`-tag, and click `Copy XPath` (the text here depends on the browser). You can get relative paths or absolute paths. Hopefully you get one of the paths below
+
+* `/html/body/div/div[3]/div/p`
+* `//*[@id="events"]/p`
+
+We wont get into the details of xpaths here, but try to understand why these strings are valid xpaths.
+<!-- TODO: add link to xpath reference -->
+
+In the next step, we will use this to create our first test.

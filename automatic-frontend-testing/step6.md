@@ -1,44 +1,36 @@
-We're now ready to do some unit tests with Selenium. We use the same imports as before, but now we've also added the package `unittest`. Create the file `website-test.py` with `touch website-test.py`{{execute}}. Open the file `website-test.py` and add all dependencies like we did in the step before in `selenium-test.py`. Make sure to add the line `import unittest` this time, as we've done below.
+We're finally ready to test this on a real website. 
+
+Go to `https://testpages.herokuapp.com/styled/key-click-display-test.html` in your own browser and see what it does. Notice that it features a button which will change the HTML by adding a `<p>click</p>`-tag when it's pressed. We want to create automatic tests for checking that this works as intended.
+
+Go to the file `website-test.py` again. Create a new function within the class called `testButtonClick()`, in the following way
 
 ```python
-import unittest
-from selenium import webdriver
-chrome_path = '/root/chromedriver'
-
-from selenium.webdriver.chrome.options import Options
-options = Options()
-options.add_argument("--headless")      # Runs Chrome in headless mode.
-options.add_argument('--no-sandbox')    # Bypass OS security model
+def testButtonClick(self):
+    # Fetches the website
+    self.browser.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')
 ```
 
-Next, we need to add our test class. 
-```python
-class TestCase(unittest.TestCase):
+Great! Now we need to find the button. Recall that the button has the following HTML
 
-    def setUp(self):
-        # Set up the driver
-        self.browser = webdriver.Chrome(options=options, executable_path=chrome_path)
-        # Clean up function to be called after each test
-        self.addCleanup(self.browser.quit)
-
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
+```html
+<input id="button" type="button" value="click me" class="styled-click-button">
 ```
 
-The `setUp()`-method creates our `self.browser` object which will keep the web driver. We also have our `addCleanup()`-method, which quits the browser when we're finished. We now need to add our test. Below the `setUp()` function on the same indentation level, we add our first test:
+We'll add the following lines in our test
+
+```python 
+element = self.browser.find_element_by_id("button")
+element.click()
+```
+
+which will find the button and click on it.
+
+Remembering the xpath from step 5, we should have a `<p>click</p>`-tag in the xpath `/html/body/div/div[3]/div/p`. So we want to assert if there is a `<p>click</p>` tag in the expected xpath in our browser. Below the `element.click()` line, add the following assertion:
 
 ```python
-    # First test
-    def testPageTitle(self):
-        # Fetches the website
-        self.browser.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')
-        # Asserts that the string Google is in the title
-        self.assertIn('Keys and Click Event Display', self.browser.title)
+self.assertIn('<p>click</p>', self.browser.find_element_by_xpath("/html/body/div/div[3]/div/p").page_source)
 ```
 
-We can run this program by typing
+Run the tests with `python3 website-test.py`{{execute}}. Make sure that they succeed!
 
-`python3 website-test.py`{{execute}}
-
-If everything runs correctly, you should have 1 test passing. Try renaming the `Keys and Click Event Display` string and see if the test passes!
 

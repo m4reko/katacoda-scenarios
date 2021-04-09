@@ -1,42 +1,24 @@
-# Testing out Selenium
-We are now finally done with the installations, yay! Now we can begin trying out Selenium.
+We're now ready to see what we can do with Selenium. The website `https://testpages.herokuapp.com` has great pages for trying out automatic testing. In this step, we will use the page `https://testpages.herokuapp.com/styled/key-click-display-test.html`.
 
-We first need to create our file. Run `touch selenium-test.py`{{execute}} and then click on the file `selenium-test.py` in the editor above.
-## Python code
-The first step is to import our dependencies. Type this into the file:
+In the same file that we used in the previous step, `selenium-test.py`, replace the line `driver.get('https://www.google.com')` with `driver.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')`
 
-<pre class="file" data-filename="selenium-test.py">
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-</pre>
+## Getting the page title and URL
 
-We also need to define some options for the web driver. For example, we can't see the browser when it's testing, which is why we're running it in `headless` mode. Add the following lines below:
+Add the following line:
 
-<pre class="file" data-filename="selenium-test.py">
-options = Options()
-# Runs Chrome in headless mode
-options.add_argument("--headless")
-# Bypass OS security model; this is needed since we run it in headless mode
-options.add_argument('--no-sandbox')
-# Define the path to the driver we downloaded
-chrome_path = '/root/chromedriver'
-# Run the driver with options and the path to the web driver
-driver = webdriver.Chrome(options=options, executable_path=chrome_path)
-</pre>
+```python
+print(driver.title)
+print(driver.url)
+```
 
-Now we're all set! We can try fetching a website by adding the following to the end of the file:
+and run the file again with `python3 selenium-test.py`{{execute}}.
 
-<pre class="file" data-filename="selenium-test.py">
-driver.get('www.google.com')
-</pre>
+## Getting the page source
 
-Just to verify for ourselves that the driver managed to fetch the website we can print the page source by adding the following:
+We touched upon this a bit in the step before, but now we're doing it again. You can view the entire inner HTML by calling `driver.page_source`. Again in the same file, add the line
 
-<pre class="file" data-filename="selenium-test.py">
+```python
 print(driver.page_source)
-</pre>
+```
 
-Now we're done with he file! Execute it by typing
-`python3 selenium-test.py`{{execute}}
-
-If you've done everything correctly, this command should print the source of the website we fetched.
+and run the file again with `python3 selenium-test.py`{{execute}}. In this case, we get <!-- TODO: continue -->

@@ -1,8 +1,32 @@
-# Introduction
-An important part of the DevOps architecture is the testing of the product. We must ensure to our customer that our product works as intended, before and after we apply our changes.
+## Google Chrome
+We are mounting this tutorial in a clean Ubuntu installation. We therefore need to get our browser of choice to do the testing in.
 
-A website can be made in many ways, but a common strategy is to store the frontend and backend separately. As coders we usually test the individual functions in each part separately.
+First download Google Chrome.
 
-However, a customer does not see the website as code with a frontend and a backend. The customer sees the website as a website. As coders, we must ensure that the customer experience on the website should work without any issues. However, testing a website by hand is cumbersome and it's difficult to try out all combinations of button pressings.
+`wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb`{{execute}}
 
-Selenium is a framework for testing websites automatically. In this tutorial, we will introduce Selenium with `python` and use it for testing websites.
+Then use `dpkg` to install it. Don't worry about any errors that might show up. They will be fixed with the next command.
+
+`dpkg -i google-chrome-stable_current_amd64.deb`{{execute}}
+
+Use this command to fix any dependency errors created by the last command.
+
+`apt update && apt-get -f -y install`{{execute}}
+
+## Web driver
+A web driver allows you to control your browser with code. This tool lets us create the automatic testing in Chrome.
+
+Download the driver.
+
+`wget https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip`{{execute}}
+
+Unzip the file.
+
+`unzip chromedriver_linux64.zip`{{execute}}
+
+## Selenium
+Lastly, we need the framework for controlling the web driver. We will use `python` as our language, which has an implementation of Selenium.
+
+Install Selenium with `pip`.
+
+`pip install selenium`{{execute}}
