@@ -6,10 +6,10 @@ In the same file that we used in the previous step, `selenium-test.py`, replace 
 
 Add the following line:
 
-```python
+<pre class="file" data-filename="selenium-test.py">
 print(driver.title)
 print(driver.url)
-```
+</pre>
 
 and run the file again with `python3 selenium-test.py`{{execute}}.
 
@@ -17,8 +17,8 @@ and run the file again with `python3 selenium-test.py`{{execute}}.
 
 We touched upon this a bit in the step before, but now we're doing it again. You can view the entire inner HTML by calling `driver.page_source`. Again in the same file, add the line
 
-```python
+<pre class="file" data-filename="selenium-test.py">
 print(driver.page_source)
-```
+</pre>
 
 and run the file again with `python3 selenium-test.py`{{execute}}. In this case, we get <!-- TODO: continue -->

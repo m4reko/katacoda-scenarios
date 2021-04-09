@@ -3,18 +3,18 @@ Open your browser on your own computer and go to the page `https://testpages.her
 
 You'll see that it looks something like this:
 
-```html
+<pre class="file" data-filename="div.html">
 <div id="events">
     <input id="button" type="button" value="click me" class="styled-click-button">
 </div>
-```
+</pre>
 
 Notice that the button has an id, `id="button"`. We can use this with Selenium to target components on the page, given that they have a unique id. In this case, we would like to click the button. In the `selenium-test.py` file, type
 
-```python
+<pre class="file" data-filename="selenium-test.py">
 element = driver.find_element_by_id("button")
 element.click()
-```
+</pre>
 And done! We've clicked on the button. Try typing out the `page_source` of the `driver` now.
 
 ## Finding elements by `xpath`
