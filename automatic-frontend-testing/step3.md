@@ -4,7 +4,7 @@ In the same file that we used in the previous step, `selenium-test.py`, replace 
 
 ## Getting the page title and URL
 
-Add the following line:
+Add the following lines
 
 <pre class="file" data-filename="selenium-test.py">
 print(driver.title)
