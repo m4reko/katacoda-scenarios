@@ -28,6 +28,6 @@ Now, if you are using any of the larger browsers you can right click on the `<p>
 * `/html/body/div/div[3]/div/p`
 * `//*[@id="events"]/p`
 
-We wont get into the details of `xpath`s here, but try to understand why these strings are valid `xpath`s. [Here](https://en.wikipedia.org/wiki/XPath) is a link to the wikipedia article on `xpath`s and [here](https://devhints.io/xpath) is a link to a more concrete cheat sheet to help you understand `xpath`s a bit better.
+We wont get into the details of `xpath` here, but try to understand why these strings are valid `xpath`s. [Here](https://en.wikipedia.org/wiki/XPath) is a link to the wikipedia article on `xpath`s and [here](https://devhints.io/xpath) is a link to a more concrete cheat sheet to help you understand them a bit better.
 
 In the next step, we will use this to create our first test.
