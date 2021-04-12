@@ -16,7 +16,7 @@ element = driver.find_element_by_id("button")
 element.click()
 </pre>
 
-And done! We've clicked the button. Try printing the `page_source` of the `driver` after the button was clicked and see that it changed.
+And done! We've clicked the button. Try printing the `page_source` of the `driver` after the button was clicked and see that it changed accordingly.
 
 ## Finding elements by `xpath`
 `xpath` is another way of finding your way around a HTML-document. Finding elements by `xpath` relies on the tree structure of the document, compared to finding by id which relies on the component having a unique id.

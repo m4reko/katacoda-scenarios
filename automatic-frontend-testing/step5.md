@@ -1,44 +1,50 @@
-We're now ready to do some unit tests with Selenium. We use the same imports as before, but now we've also added the package `unittest`. Create the file `website-test.py` with `touch website-test.py`{{execute}}. Open the file `website-test.py` and add all dependencies like we did in the step before in `selenium-test.py`. Make sure to add the line `import unittest` this time, as we've done below.
+We're now ready to do some unit tests with Selenium. We use the same imports as before, but now we've also added the package `unittest`. This package is the default testing framework for `python` and gives us the tools to
 
-```python
+Create the file `website-test.py` with `touch website-test.py`{{execute}}. Open the file `website-test.py` and add all dependencies like we did in the step before in `selenium-test.py`. Make sure to add the line `import unittest` this time, as we've done below.
+
+<pre class="file" data-filename="website-test.py">
 import unittest
 from selenium import webdriver
-chrome_path = '/root/chromedriver'
-
 from selenium.webdriver.chrome.options import Options
-options = Options()
-options.add_argument("--headless")      # Runs Chrome in headless mode.
-options.add_argument('--no-sandbox')    # Bypass OS security model
-```
+</pre>
 
-Next, we need to add our test class. 
-```python
-class TestCase(unittest.TestCase):
+Next, we need to add our test class which will hold out unit tests as well as a set up function. This is the preferred pattern from the `unittest` package.
+
+<pre class="file" data-filename="website-test.py">
+class WebsiteTest(unittest.TestCase):
 
     def setUp(self):
+        options = Options()
+        # Runs Chrome in headless mode
+        options.add_argument('--headless')
+        # Bypass OS security model; this is needed since we run it in headless mode
+        options.add_argument('--no-sandbox')
+        # Define the path to the driver we downloaded
+        chrome_path = '/root/chromedriver'
         # Set up the driver
-        self.browser = webdriver.Chrome(options=options, executable_path=chrome_path)
+        self.driver = webdriver.Chrome(options=options, executable_path=chrome_path)
+
         # Clean up function to be called after each test
-        self.addCleanup(self.browser.quit)
+        self.addCleanup(self.driver.quit)
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
-```
+    unittest.main()
+</pre>
 
-The `setUp()`-method creates our `self.browser` object which will keep the web driver. We also have our `addCleanup()`-method, which quits the browser when we're finished. We now need to add our test. Below the `setUp()` function on the same indentation level, we add our first test:
+The `setUp()`-method creates our `self.driver` object which will keep the web driver, just as in the last example; `selenium-test.py`. We also call a `addCleanup()`-method with the `driver.quit`-method in the set up process, which makes sure that the driver quits after each test. The last part of the snippet above (the `if` statement) ensures that the default way of executing this file is running the unit tests using the `unittest` package.
 
-```python
-    # First test
-    def testPageTitle(self):
+We now need to add our test. Below the `setUp()` function on the same indentation level, we add our first test:
+
+<pre class="file" data-filename="website-test.py">
+    def test_page_title(self):
         # Fetches the website
-        self.browser.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')
-        # Asserts that the string Google is in the title
-        self.assertIn('Keys and Click Event Display', self.browser.title)
-```
+        self.driver.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')
+        # Asserts that the page title is equal to the string 'Keys and Clicks'.
+        self.assertEqual('Keys and Clicks', self.driver.title)
+</pre>
 
-We can run this program by typing
+We can run this test class with our single test by typing
 
 `python3 website-test.py`{{execute}}
 
-If everything runs correctly, you should have 1 test passing. Try renaming the `Keys and Click Event Display` string and see if the test passes!
-
+If everything runs correctly, you should have 1 test passing. Try changing the `Keys and Clicks` string of the assert and see if the test passes!
