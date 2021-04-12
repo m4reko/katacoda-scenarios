@@ -2,23 +2,23 @@ We're now ready to see what we can do with Selenium. The website `https://testpa
 
 In the same file that we used in the previous step, `selenium-test.py`, replace the line `driver.get('https://www.google.com')` with `driver.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')`
 
-## Getting the page title and URL
+## Getting the page URL
+In addition to getting the title of the web page as we did in the last step we can also getting the page URL. This can be useful if we navigate to a page that is redirecting us or if we are interacting with a page and want to check that the URl changed accordingly.
 
-Add the following lines
+Add the following line
 
 <pre class="file" data-filename="selenium-test.py">
-print(driver.title)
 print(driver.url)
 </pre>
 
-and run the file again with `python3 selenium-test.py`{{execute}}.
+and run the file again with `python3 selenium-test.py`{{execute}} to print the URL.
 
 ## Getting the page source
 
-We touched upon this a bit in the step before, but now we're doing it again. You can view the entire inner HTML by calling `driver.page_source`. Again in the same file, add the line
+If you want to you can also view the entire HTML source of the page by calling `driver.page_source`. Again in the same file, add the line
 
 <pre class="file" data-filename="selenium-test.py">
 print(driver.page_source)
 </pre>
 
-and run the file again with `python3 selenium-test.py`{{execute}}. In this case, we get <!-- TODO: continue -->
+and run the file again with `python3 selenium-test.py`{{execute}}.

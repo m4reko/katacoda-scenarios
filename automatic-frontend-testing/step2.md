@@ -30,13 +30,13 @@ Now we're all set! We can try fetching a website by adding the following to the 
 driver.get('https://www.google.com')
 </pre>
 
-Just to verify for ourselves that the driver managed to fetch the website we can print the page source by adding the following:
+Just to verify for ourselves that the driver managed to fetch the website we can print the page title (the text string showing in the browser tab) by adding the following:
 
 <pre class="file" data-filename="selenium-test.py">
-print(driver.page_source)
+print(driver.title)
 </pre>
 
 Now we're done with he file! Execute it by typing
 `python3 selenium-test.py`{{execute}}
 
-If you've done everything correctly, this command should print the source of the website we fetched.
+If you've done everything correctly, this command should print the title of the website we fetched.
