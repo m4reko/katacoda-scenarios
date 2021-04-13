@@ -1,4 +1,4 @@
-We're now ready to do some unit tests with Selenium. We use the same imports as before, but now we've also added the package `unittest`. This package is the default testing framework for `python` and gives us the tools to
+We're now ready to do some unit tests with Selenium. We use the same imports as before, but now we've also added the package `unittest`. This package is the default testing framework for `python` and gives us the tools to create unit test classes and assert that code behaves in the correct way.
 
 Create the file `website-test.py` with `touch website-test.py`{{execute}}. Open the file `website-test.py` and add all dependencies like we did in the step before in `selenium-test.py`. Make sure to add the line `import unittest` this time, as we've done below.
 

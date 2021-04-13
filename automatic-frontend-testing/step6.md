@@ -25,7 +25,13 @@ We'll add the following lines in our test
 
 which will find the button and click which was explained in step 4.
 
-Remembering the `xpath` from step 4, we should have a `<p>click</p>`-tag at the xpath `/html/body/div/div[3]/div/p`. We want to assert if there is a `<p>click</p>` tag at the expected `xpath` in our page source. Below the `element.click()` line, add the following assertion that check that the `<p>`-tag exists:
+Remembering the `xpath` from step 4, we should have a `<p>click</p>`-tag at the `xpath` `/html/body/div/div[3]/div/p`. We want to assert if there is a `<p>click</p>` tag at the expected `xpath` in our page source. To do this we first need to add the following line to our imports:
+
+<pre class="file" data-filename="website-test.py">
+from selenium.common.exceptions import NoSuchElementException
+</pre>
+
+The, below the `element.click()` line, add the following assertion that checks that the `<p>`-tag exists:
 
 <pre class="file" data-filename="website-test.py">
         try:
