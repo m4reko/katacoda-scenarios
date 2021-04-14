@@ -1,6 +1,6 @@
 We're finally ready to use `unittest` and Selenium together for real with some interactivity.
 
-Go to `https://testpages.herokuapp.com/styled/key-click-display-test.html` in your own browser and see what it does. Notice that it features a button which will change the HTML by adding a `<p>click</p>`-tag when it's pressed. We want to create automatic tests for checking that this works as intended.
+We want to automatically click the button in `https://testpages.herokuapp.com/styled/key-click-display-test.html` and create a test for seeing if the button works as intended.
 
 Go to the file `website-test.py` again. Create a new function within the class called `test_button_click()`, in the following way
 
