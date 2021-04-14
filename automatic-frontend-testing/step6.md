@@ -2,7 +2,7 @@ We're finally ready to use `unittest` and Selenium together for real with some i
 
 We want to automatically click the button in `https://testpages.herokuapp.com/styled/key-click-display-test.html` and create a test for seeing if the button works as intended.
 
-Go to the file `website-test.py` again. Create a new function within the class called `test_button_click()`, in the following way
+Go to the file `website-test.py` again. Create a new function called `test_button_click()` within the class, in the following way
 
 <pre class="file" data-filename="website-test.py">
     def test_button_click(self):
