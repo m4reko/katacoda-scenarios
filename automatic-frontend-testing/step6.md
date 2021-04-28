@@ -42,7 +42,7 @@ The, below the `element.click()` line, add the following assertion that checks t
             self.fail()
 </pre>
 
-We also want to assert that it contains the string `click` which we can do with the following line:
+We also want to assert that it contains the string `click`. Finish the `test_button_click()`-function by adding the following line as the last line of the function:
 
 <pre class="file" data-filename="website-test.py">
         # Extract the text from the p-tag and assert that it's 'click'
