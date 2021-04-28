@@ -31,7 +31,7 @@ Remembering the `xpath` from step 4, we should have a `<p>click</p>`-tag at the 
 from selenium.common.exceptions import NoSuchElementException
 </pre>
 
-The, below the `element.click()` line, add the following assertion that checks that the `<p>`-tag exists:
+The, below the `button_element.click()` line, add the following assertion that checks that the `<p>`-tag exists:
 
 <pre class="file" data-filename="website-test.py">
         try:
@@ -49,4 +49,4 @@ We also want to assert that it contains the string `click`. Finish the `test_but
         self.assertEqual('click', click_element.text)
 </pre>
 
-Now, run both of the tests in our test class with `python3 website-test.py`{{execute}}. Make sure that they succeed! You can also try removing the line `element.click()` and verify that the test fails.
+Now, run both of the tests in our test class with `python3 website-test.py`{{execute}}. Make sure that they succeed! You can also try removing the line `button_element.click()` and verify that the test fails.
