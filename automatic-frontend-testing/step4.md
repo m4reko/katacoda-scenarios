@@ -11,6 +11,18 @@ You'll see that there is a part that looks something like this:
 </div>
 ```
 
+After we click the button _twice_, the HTML will look like this:
+
+```html
+<div class="centered">
+    <div id="events">
+        <input id="button" type="button" value="click me" class="styled-click-button">
+        <p>click</p>
+        <p>click</p>
+    </div>
+</div>
+```
+
 Notice that the button has an id, `id="button"`. We can use this with Selenium to target components of the page, given that they have a unique id. In this case, we would like to click the button. In the `selenium-test.py` file, type
 
 <pre class="file" data-filename="selenium-test.py">
