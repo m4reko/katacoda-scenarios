@@ -4,8 +4,10 @@ Open the browser on your own computer and go to the page `https://testpages.hero
 You'll see that there is a part that looks something like this:
 
 ```html
-<div id="events">
-    <input id="button" type="button" value="click me" class="styled-click-button">
+<div class="centered">
+    <div id="events">
+        <input id="button" type="button" value="click me" class="styled-click-button">
+    </div>
 </div>
 ```
 
