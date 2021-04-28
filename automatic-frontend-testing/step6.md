@@ -2,7 +2,7 @@ We're finally ready to use `unittest` and Selenium together for real with some i
 
 We want to automatically click the button in `https://testpages.herokuapp.com/styled/key-click-display-test.html` and create a test for seeing if the button works as intended.
 
-Go to the file `website-test.py` again. Create a new function called `test_button_click()` within the class, in the following way
+Go to the file `website-test.py` again. Create a new function called `test_button_click()` within the class, in the following way (**beware that you can't use the `Copy to Editor` button in any of the steps below**, you have to manually copy and paste the code to the right line and indentation level)
 
 <pre class="file" data-filename="website-test.py">
     def test_button_click(self):
@@ -16,7 +16,7 @@ Great! Now we need to find the button. Recall that the button has the following 
 <input id="button" type="button" value="click me" class="styled-click-button">
 ```
 
-We'll add the following lines in our test
+We'll add the following lines in our test `test_button_click`
 
 <pre class="file" data-filename="website-test.py">
         button_element = self.driver.find_element_by_id("button")
@@ -25,7 +25,7 @@ We'll add the following lines in our test
 
 which will find the button and click which was explained in step 4.
 
-Remembering the `xpath` from step 4, we should have a `<p>click</p>`-tag at the `xpath` `/html/body/div/div[3]/div/p`. We want to assert if there is a `<p>click</p>` tag at the expected `xpath` in our page source. To do this we first need to add the following line to our imports:
+Remembering the `xpath` from step 4, we should have a `<p>click</p>`-tag at the `xpath` `/html/body/div/div[3]/div/p`. We want to assert if there is a `<p>click</p>` tag at the expected `xpath` in our page source. To do this we first need to add the following line to our imports at the top of the file:
 
 <pre class="file" data-filename="website-test.py">
 from selenium.common.exceptions import NoSuchElementException
