@@ -1,4 +1,4 @@
-An important part of the DevOps architecture is the testing of the product. We must ensure to our customer that our product works as intended, before and after we apply our changes.
+An important part of the DevOps architecture is the testing of the product. We must ensure to our customer that our product works as intended, before and after we apply changes to our code for every new feature.
 
 A website can be made in many ways, but a common strategy is to store the frontend and backend separately. As coders we usually test the individual functions in each part separately.
 
