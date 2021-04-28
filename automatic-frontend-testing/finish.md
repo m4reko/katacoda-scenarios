@@ -1,3 +1,3 @@
-Good job! Now you know the basics of frontend testing using Selenium and `python`. This is a huge topic and we encourage you to dig deeper if you find this interesting. It can be very useful for your web project if you want to ensure that you don't introduce breaking changes in your code and that all user flows works as expected.
+Good job! Now you know the basics of frontend testing using Selenium and `python`. This is a huge topic and we encourage you to dig deeper if you find this interesting. For example you can start at any of these places: [Selenium homepage](https://www.selenium.dev/), [Selenium documentation](https://www.selenium.dev/documentation/en/), [Wikipedia of Selenium](https://en.wikipedia.org/wiki/Selenium_(software)). It can be very useful for your web project if you want to ensure that you don't introduce breaking changes in your code and that all user flows works as expected.
 
 Thank you for following this tutorial!

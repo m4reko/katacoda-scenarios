@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
 The `setUp()`-method creates our `self.driver` object which will keep the web driver, just as in the last example; `selenium-test.py`. We also call a `addCleanup()`-method with the `driver.quit`-method in the set up process, which makes sure that the driver quits after each test. The last part of the snippet above (the `if` statement) ensures that the default way of executing this file is running the unit tests using the `unittest` package.
 
-We now need to add our test. Below the `setUp()` function on the same indentation level, we add our first test:
+We now need to add our test. Below the `setUp()` function on the same indentation level, we add our first test. (**Beware that you can't blindly use the `Copy to Editor` here! You need to manually paste the code snippet where you want it!**):
 
 <pre class="file" data-filename="website-test.py">
     def test_page_title(self):

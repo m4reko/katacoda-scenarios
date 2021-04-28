@@ -40,3 +40,6 @@ Now we're done with he file! Execute it by typing
 `python3 selenium-test.py`{{execute}}
 
 If you've done everything correctly, this command should print the title of the website we fetched.
+
+You can use `driver.get()` on any website of your choice! Try it out for your self :)
+

@@ -1,9 +1,9 @@
-We're now ready to see what we can do with Selenium. The website `https://testpages.herokuapp.com` has great pages for trying out automatic testing. In this step, we will use the page `https://testpages.herokuapp.com/styled/key-click-display-test.html`.
+We're now ready to see what we can do with Selenium. The website `https://testpages.herokuapp.com` has great pages for trying out automatic testing since they include simple behaviours that are tangible and testible. In this step, we will use the page `https://testpages.herokuapp.com/styled/key-click-display-test.html`.
 
 In the same file that we used in the previous step, `selenium-test.py`, replace the line `driver.get('https://www.google.com')` with `driver.get('https://testpages.herokuapp.com/styled/key-click-display-test.html')`
 
 ## Getting the page URL
-In addition to getting the title of the web page as we did in the last step we can also getting the page URL. This can be useful if we navigate to a page that is redirecting us or if we are interacting with a page and want to check that the URL changed accordingly.
+In addition to getting the title of the web page as we did in the last step we can also get the page URL. This can be useful if we navigate to a page that is redirecting us or if we are interacting with a page and want to check that the URL changed accordingly.
 
 Add the following line
 
